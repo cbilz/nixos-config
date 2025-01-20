@@ -60,5 +60,15 @@ in
     pinentryPackage = pkgs.pinentry-all;
   };
 
+  # This GC run could become redundant if the following issue is resolved:
+  # https://github.com/NixOS/nix/issues/8508
+  nix.gc = {
+    automatic = true;
+    persistent = true;
+    frequency = "weekly";
+    randomizedDelaySec = "10min";
+    options = "--delete-older-than 30d";
+  };
+
   home.stateVersion = "22.11"; # DON'T CHANGE! Read the documentation.
 }
