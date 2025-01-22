@@ -36,6 +36,7 @@ with pkgs;
   qrencode
   # TODO: Configure qutebrowser bindings, search engines, etc. through programs.qutebrowser
   qutebrowser
+  restic
   # TODO: Configure email accounts using accounts.email
   # TODO: Configure thunderbird via programs.thunderbird
   thunderbird
