@@ -56,6 +56,7 @@ in
 
   networking = {
     hostName = "shinujin";
+    # TODO: Configure NetworkManager profiles using networkmanager.ensureProfiles.profiles
     networkmanager.enable = true;
   };
 
