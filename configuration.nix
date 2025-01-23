@@ -6,6 +6,7 @@
 }:
 
 let
+  secrets = import ./secrets.nix { inherit lib; };
   unfree = import ./unfree.nix { inherit lib; };
   unstable = unfree.importWithPredicate <nixos-unstable> { };
 in
@@ -27,7 +28,7 @@ in
         "scanner"
         "wheel"
       ];
-      hashedPassword = lib.fileContents /root/secrets/ck_login_pass;
+      hashedPassword = secrets.hashedUserPassword;
     };
   };
 

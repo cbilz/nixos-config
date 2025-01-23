@@ -1,10 +1,13 @@
 { lib }:
+let
+  secrets = import ../../secrets.nix { inherit lib; };
+in
 {
   enable = true;
   extraConfig = {
     user = {
-      name = lib.fileContents ~/.secrets/name;
-      email = lib.fileContents ~/.secrets/email;
+      name = secrets.name;
+      email = secrets.email;
     };
     merge = {
       tool = "vimdiff";
