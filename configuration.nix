@@ -6,19 +6,11 @@
 }:
 
 let
-  unstable = import <nixos-unstable> {
-    config.allowUnfreePredicate =
-      pkg:
-      builtins.elem (lib.getName pkg) [
-      ];
-  };
+  unfree = import ./unfree.nix { inherit lib; };
+  unstable = unfree.importWithPredicate <nixos-unstable> { };
 in
 {
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "obsidian"
-    ];
+  nixpkgs.config.allowUnfreePredicate = unfree.predicate;
 
   imports = [
     ./hardware-configuration.nix

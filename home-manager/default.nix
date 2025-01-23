@@ -5,14 +5,6 @@
   ...
 }:
 
-let
-  unstable = import <nixos-unstable> {
-    config.allowUnfreePredicate =
-      pkg:
-      builtins.elem (lib.getName pkg) [
-      ];
-  };
-in
 {
   home = {
     username = "ck";
