@@ -6,12 +6,18 @@
 }:
 
 let
-  unstable = import <nixos-unstable> { };
+  unstable = import <nixos-unstable> {
+    config.allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+      ];
+  };
 in
 {
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      "obsidian"
     ];
 
   imports = [
@@ -30,7 +36,6 @@ in
         "wheel"
       ];
       hashedPassword = lib.fileContents /root/secrets/ck_login_pass;
-      packages = with pkgs; [ home-manager ];
     };
   };
 
@@ -48,8 +53,11 @@ in
     sudo.enable = false;
   };
 
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.ck = import ./home-manager;
+  };
 
   console.keyMap = "de-latin1";
   time.timeZone = "Europe/Berlin";

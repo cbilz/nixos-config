@@ -14,12 +14,6 @@ let
   };
 in
 {
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "obsidian"
-    ];
-
   home = {
     username = "ck";
     homeDirectory = "/home/ck";
@@ -34,7 +28,7 @@ in
   programs = import ./programs { inherit lib pkgs; };
 
   # TODO: Configure starship using the programs.starship module
-  xdg.configFile."starship.toml".source = ~/dotfiles/starship/starship.toml;
+  xdg.configFile."starship.toml".source = /home/ck/dotfiles/starship/starship.toml;
 
   i18n.inputMethod = {
     enabled = "fcitx5";
