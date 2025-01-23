@@ -33,14 +33,6 @@
 
   fonts.fontconfig.enable = true;
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita";
-      package = pkgs.gnome-themes-extra;
-    };
-  };
-
   services.gpg-agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-all;
