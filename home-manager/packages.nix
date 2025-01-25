@@ -32,7 +32,6 @@ with pkgs;
   man-pages
   man-pages-posix
   nixfmt-rfc-style
-  noto-fonts-cjk-serif
   obsidian
   paperwork
   pavucontrol
