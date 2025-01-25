@@ -38,6 +38,7 @@
       PASSWORD_STORE_CHARACTER_SET_NO_SYMBOLS = "[:alnum:]";
     };
   };
+  ripgrep.enable = true;
   # TODO: Configure starship here
   starship.enable = true;
   vscode = {
