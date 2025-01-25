@@ -100,14 +100,20 @@ in
       nvd
     ];
     gnome.excludePackages = with pkgs; [
+      baobab
       epiphany
+      file-roller
       geary
+      gnome-calculator
       gnome-calendar
+      gnome-console
       gnome-contacts
       gnome-maps
       gnome-system-monitor
       gnome-text-editor
       gnome-tour
+      loupe
+      seahorse
       totem
     ];
     etc.crypttab = {
