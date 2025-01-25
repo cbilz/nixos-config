@@ -22,6 +22,7 @@
     nix-direnv.enable = true;
   };
   firefox.enable = true;
+  ghostty = import ./ghostty.nix;
   git = import ./git.nix { inherit lib; };
   home-manager.enable = true;
   imv.enable = true;

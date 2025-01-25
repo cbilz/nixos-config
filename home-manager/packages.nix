@@ -14,7 +14,6 @@ with pkgs;
   exiftool
   ffmpeg-full
   file
-  ghostty
   gimp
   gnome-sound-recorder
   gnome-tweaks
