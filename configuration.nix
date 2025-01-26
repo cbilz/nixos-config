@@ -163,30 +163,30 @@ in
       defaultFonts = {
         serif = [
           "DejaVu Serif"
+          "Noto Serif"
           "Noto Serif CJK SC"
           "Noto Serif CJK TC"
           "Noto Serif CJK HK"
           "Noto Serif CJK JP"
           "Noto Serif CJK KR"
-          "Noto Serif"
         ];
         sansSerif = [
           "DejaVu Sans"
+          "Noto Sans"
           "Noto Sans CJK SC"
           "Noto Sans CJK TC"
           "Noto Sans CJK HK"
           "Noto Sans CJK JP"
           "Noto Sans CJK KR"
-          "Noto Sans"
         ];
         monospace = [
           "DejaVu Sans Mono"
+          "Noto Sans Mono"
           "Noto Sans Mono CJK SC"
           "Noto Sans Mono CJK TC"
           "Noto Sans Mono CJK HK"
           "Noto Sans Mono CJK JP"
           "Noto Sans Mono CJK KR"
-          "Noto Sans Mono"
         ];
         emoji = [
           "Noto Color Emoji"
