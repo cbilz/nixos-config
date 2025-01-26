@@ -36,6 +36,8 @@
     pinentryPackage = pkgs.pinentry-all;
   };
 
+  dconf = import ./dconf.nix { inherit lib; };
+
   # This GC run could become redundant if the following issue is resolved:
   # https://github.com/NixOS/nix/issues/8508
   nix.gc = {

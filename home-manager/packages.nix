@@ -10,6 +10,8 @@ with pkgs;
   cached-nix-shell
   chatterino2
   compsize
+  dconf-editor
+  dconf2nix
   digikam
   exiftool
   ffmpeg-full
