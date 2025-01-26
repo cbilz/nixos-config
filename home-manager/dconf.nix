@@ -44,7 +44,7 @@ with lib.hm.gvariant;
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       edge-tiling = false;
-      workspaces-only-on-primary = false;
+      workspaces-only-on-primary = true;
     };
 
     "org/gnome/settings-daemon/plugins/color" = {
