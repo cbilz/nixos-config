@@ -156,6 +156,7 @@ in
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
+      noto-fonts-monochrome-emoji
     ];
 
     fontconfig = {
@@ -169,6 +170,8 @@ in
           "Noto Serif CJK HK"
           "Noto Serif CJK JP"
           "Noto Serif CJK KR"
+          "Noto Color Emoji"
+          "Noto Emoji"
         ];
         sansSerif = [
           "DejaVu Sans"
@@ -178,6 +181,8 @@ in
           "Noto Sans CJK HK"
           "Noto Sans CJK JP"
           "Noto Sans CJK KR"
+          "Noto Color Emoji"
+          "Noto Emoji"
         ];
         monospace = [
           "DejaVu Sans Mono"
@@ -187,9 +192,12 @@ in
           "Noto Sans Mono CJK HK"
           "Noto Sans Mono CJK JP"
           "Noto Sans Mono CJK KR"
+          "Noto Color Emoji"
+          "Noto Emoji"
         ];
         emoji = [
           "Noto Color Emoji"
+          "Noto Emoji"
         ];
       };
     };
