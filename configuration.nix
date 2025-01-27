@@ -213,7 +213,8 @@ in
     };
     optimise = {
       automatic = true;
-      dates = [ "Sun, 16:00" ];
+      # This timer is persistent, although this is undocumented.
+      dates = [ "Thursday" ];
     };
   };
 
