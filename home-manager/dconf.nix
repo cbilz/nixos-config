@@ -50,7 +50,7 @@ with lib.hm.gvariant;
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
       night-light-schedule-automatic = false;
-      night-light-temperature = mkUint32 2700;
+      night-light-temperature = mkUint32 3200;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
