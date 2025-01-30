@@ -4,11 +4,13 @@ let
 in
 {
   enable = true;
+
+  userName = secrets.name;
+  userEmail = secrets.email;
+
+  aliases.lg = "log --graph --all --format='%C(yellow)%h%C(auto)%d %Cblue%s %Creset%C(italic)%an (%ar)'";
+
   extraConfig = {
-    user = {
-      name = secrets.name;
-      email = secrets.email;
-    };
     merge = {
       tool = "vimdiff";
       conflictstyle = "diff3";
@@ -21,9 +23,6 @@ in
     };
     pull = {
       rebase = "false";
-    };
-    alias = {
-      lg = "log --graph --all --format='%C(yellow)%h%C(auto)%d %Cblue%s %Creset%C(italic)%an (%ar)'";
     };
     init = {
       defaultBranch = "main";
