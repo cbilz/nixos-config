@@ -8,6 +8,10 @@ in
   userName = secrets.name;
   userEmail = secrets.email;
 
+  ignores = [
+    "/.direnv"
+  ];
+
   aliases.lg = "log --graph --all --format='%C(yellow)%h%C(auto)%d %Cblue%s %Creset%C(italic)%an (%ar)'";
 
   extraConfig = {
