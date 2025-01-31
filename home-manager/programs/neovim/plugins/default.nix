@@ -9,6 +9,7 @@ in
 with pkgs.vimPlugins;
 [
   (mkPlugin leap-nvim ./leap.lua)
+  (mkPlugin lualine-nvim ./lualine.lua)
   (mkPlugin melange-nvim ./melange.lua)
   (mkPlugin nvim-treesitter.withAllGrammars ./treesitter.lua)
   (mkPlugin telescope-nvim ./telescope.lua)
