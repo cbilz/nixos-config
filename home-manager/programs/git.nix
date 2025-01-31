@@ -15,6 +15,13 @@ in
 
   aliases.lg = "log --graph --all --format='%C(yellow)%h%C(auto)%d %Cblue%s %Creset%C(italic)%an (%ar)'";
 
+  diff-so-fancy = {
+    enable = true;
+    changeHunkIndicators = false;
+    markEmptyLines = false;
+    stripLeadingSymbols = false;
+  };
+
   extraConfig = {
     merge = {
       tool = "vimdiff";
