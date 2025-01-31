@@ -8,6 +8,7 @@ let
 in
 with pkgs.vimPlugins;
 [
+  (mkPlugin comment-nvim ./comment.lua)
   (mkPlugin leap-nvim ./leap.lua)
   (mkPlugin lualine-nvim ./lualine.lua)
   (mkPlugin melange-nvim ./melange.lua)
