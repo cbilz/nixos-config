@@ -9,6 +9,7 @@ in
   userEmail = secrets.email;
 
   ignores = [
+    ".envrc"
     "/.direnv"
   ];
 
