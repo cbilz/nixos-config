@@ -11,6 +11,7 @@ in
   ignores = [
     ".direnv"
     ".envrc"
+    "Session.vim"
   ];
 
   aliases.lg = "log --graph --all --format='%C(yellow)%h%C(auto)%d %Cblue%s %Creset%C(italic)%an (%ar)'";
