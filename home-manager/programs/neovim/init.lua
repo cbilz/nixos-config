@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader><space>", vim.cmd.noh)
+vim.keymap.set('n', '<leader>cd', "<cmd>cd %:h<cr><cmd>pwd<cr>")
 
 vim.opt.mouse = ""
 
