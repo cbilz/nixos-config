@@ -10,6 +10,7 @@ with pkgs;
   cached-nix-shell
   chatterino2
   compsize
+  cook-cli
   dconf-editor
   dconf2nix
   digikam

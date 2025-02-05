@@ -11,7 +11,10 @@ let
   unstable = unfree.importWithPredicate <nixos-unstable> { };
 in
 {
-  nixpkgs.config.allowUnfreePredicate = unfree.predicate;
+  nixpkgs = {
+    config.allowUnfreePredicate = unfree.predicate;
+    overlays = import ./overlays;
+  };
 
   imports = [
     ./hardware-configuration.nix

@@ -1,0 +1,3 @@
+[
+  (import ./cook-cli.nix)
+]
