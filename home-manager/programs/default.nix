@@ -3,6 +3,7 @@
   bash = {
     enable = true;
     bashrcExtra = ''
+      alias less="less -M"
       alias qr="qrencode -t ANSI256UTF8 $@"
     '';
   };
