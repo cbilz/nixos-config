@@ -20,6 +20,11 @@ in
     enable = true;
     changeHunkIndicators = false;
     markEmptyLines = false;
+    pagerOpts = [
+      "--tabs=4"
+      "-RFX"
+      "-M"
+    ];
     stripLeadingSymbols = false;
   };
 
