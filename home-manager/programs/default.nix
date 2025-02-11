@@ -2,10 +2,10 @@
 {
   bash = {
     enable = true;
-    bashrcExtra = ''
-      alias less="less -M"
-      alias qr="qrencode -t ANSI256UTF8 $@"
-    '';
+    shellAliases = {
+      less="less -M";
+      qr="qrencode -t ANSI256UTF8 $@";
+    };
   };
   btop.enable = true;
   chromium = {
