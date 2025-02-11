@@ -29,6 +29,9 @@ in
   };
 
   extraConfig = {
+    diff = {
+      algorithm = "histogram";
+    };
     merge = {
       tool = "vimdiff";
       conflictstyle = "diff3";
