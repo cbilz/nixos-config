@@ -2,6 +2,11 @@
 {
   bash = {
     enable = true;
+    bashrcExtra = ''
+      function t {
+          cd $(mktemp -d /tmp/$1.XXXX)
+      }
+    '';
     shellAliases = {
       less="less -M";
       qr="qrencode -t ANSI256UTF8 $@";
