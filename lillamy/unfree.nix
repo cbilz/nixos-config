@@ -4,6 +4,7 @@ let
     "steam"
     "steam-original"
     "steam-run"
+    "steam-unwrapped"
   ];
 in
 rec {

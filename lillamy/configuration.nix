@@ -18,6 +18,8 @@ in
   imports = [
     ./hardware-configuration.nix
     <home-manager/nixos>
+    "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+    ./disko.nix
   ];
 
   environment.systemPackages = [ ];
@@ -63,20 +65,38 @@ in
         }
       ];
     };
+    # Disabled until I can figure out how to correctly auto-unlock kwallet
+    #pam.services.sddm.kwallet = {
+    #  enable = true;
+    #  forceRun = true;
+    #};
     sudo.enable = false;
   };
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.user = import ./home-manager;
+    users.boni = import ./home-manager;
   };
 
   console.keyMap = "de-latin1";
   time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "de_DE.UTF-8";
-
-  networking.hostName = "lillamy";
+  i18n = {
+    defaultLocale = "de_DE.UTF-8";
+    inputMethod = {
+      type = "fcitx5";
+      enable = true;
+      fcitx5.addons = with pkgs; [
+        fcitx5-chinese-addons
+        #fcitx5-gtk
+        #kdePackages.fcitx5-qt
+      ];
+    };
+  };
+  networking = {
+    hostName = "lillamy";
+    networkmanager.enable = true;
+  };
 
   hardware.bluetooth.enable = true;
 
@@ -114,19 +134,17 @@ in
     };
     xserver = {
       enable = true;
-      desktopManager.plasma6.enable = true;
-      displayManager = {
-        autoLogin = {
-          enable = true;
-          user = "boni";
-        };
-        #defaultSession = "plasmawayland"; # Causes an annoying fcitx popup. Try again in a while.
-        sddm = {
-          enable = true;
-          wayland.enable = true;
-        };
-      };
       xkb.layout = "de";
+    };
+    desktopManager.plasma6.enable = true;
+    displayManager = {
+      autoLogin = {
+        enable = false; # Disabled until I can figure out how to correctly auto-unlock kwallet
+        #user = "boni";
+      };
+      sddm = {
+        enable = true;
+      };
     };
   };
 

@@ -13,14 +13,7 @@
     packages = import ./packages.nix { inherit lib pkgs; };
   };
 
-  programs = import ./programs { inherit lib pkgs; };
-
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-chinese-addons
-    ];
-  };
+  programs = import ./programs.nix { inherit lib pkgs; };
 
   services.gpg-agent = {
     enable = true;
