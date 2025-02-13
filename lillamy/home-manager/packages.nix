@@ -8,6 +8,7 @@ with pkgs;
   coolreader
   paperwork
   restic
+  shotwell
   texlive.combined.scheme-full
   texworks
 ]
