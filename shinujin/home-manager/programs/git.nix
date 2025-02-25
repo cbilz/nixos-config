@@ -29,27 +29,42 @@ in
   };
 
   extraConfig = {
-    diff = {
-      algorithm = "histogram";
+    branch = {
+      sort = "committerdate";
     };
-    merge = {
-      tool = "vimdiff";
-      conflictstyle = "diff3";
+    column = {
+      ui = "auto";
+    };
+    commit = {
+      verbose = "1";
     };
     core = {
       editor = "nvim";
     };
-    push = {
-      autoSetupRemote = "true";
-    };
-    pull = {
-      rebase = "false";
+    diff = {
+      algorithm = "histogram";
+      colorMoved = "zebra";
+      colorMovedWS = "no";
+      mnemonicPrefix = "true";
     };
     init = {
       defaultBranch = "main";
     };
-    color = {
-      ui = "auto";
+    merge = {
+      conflictStyle = "diff3";
+    };
+    pull = {
+      rebase = "true";
+    };
+    rebase = {
+      autoSquash = "true";
+      autoStash = "true";
+    };
+    rerere = {
+      enabled = "true";
+    };
+    tag = {
+      sort = "version:refname";
     };
   };
 }
