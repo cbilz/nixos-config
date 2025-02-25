@@ -249,7 +249,6 @@ in
   };
 
   systemd = {
-    # TODO: Why do we have this?
     packages = [ pkgs.systemd ];
 
     services.umount-external = {
