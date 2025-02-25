@@ -47,6 +47,10 @@
   ripgrep.enable = true;
   # TODO: Configure starship here
   starship.enable = true;
+  taskwarrior = {
+    enable = true;
+    package = pkgs.taskwarrior3;
+  };
   vscode = {
     enable = true;
     package = pkgs.vscodium;
