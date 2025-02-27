@@ -44,7 +44,7 @@ in
     diff = {
       algorithm = "histogram";
       colorMoved = "zebra";
-      colorMovedWS = "no";
+      colorMovedWS = "allow-indentation-change";
       mnemonicPrefix = "true";
     };
     init = {
