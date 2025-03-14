@@ -1,6 +1,6 @@
 { lib }:
 let
-  secrets = import ../../secrets.nix { inherit lib; };
+  secrets = import ../../../secrets.nix { inherit lib; };
 in
 {
   enable = true;

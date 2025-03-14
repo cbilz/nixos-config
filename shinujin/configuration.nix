@@ -31,7 +31,14 @@ in
         "scanner"
         "wheel"
       ];
-      hashedPassword = secrets.hashedUserPassword;
+      hashedPassword = secrets.hashedUserPassword_ck;
+    };
+    users.boni = {
+      isNormalUser = true;
+      extraGroups = [
+        "networkmanager"
+      ];
+      hashedPassword = secrets.hashedUserPassword_boni;
     };
   };
 
@@ -52,7 +59,8 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.ck = import ./home-manager;
+    users.boni = import ./home-manager/boni;
+    users.ck = import ./home-manager/ck;
   };
 
   console.keyMap = "de-latin1";
