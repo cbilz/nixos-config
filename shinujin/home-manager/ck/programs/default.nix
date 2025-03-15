@@ -8,8 +8,8 @@
       }
     '';
     shellAliases = {
-      less="less -M";
-      qr="qrencode -t ANSI256UTF8 $@";
+      less = "less -M";
+      qr = "qrencode -t ANSI256UTF8 $@";
     };
   };
   btop.enable = true;
