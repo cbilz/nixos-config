@@ -17,7 +17,7 @@ with pkgs.vimPlugins;
   (mkPlugin nvim-treesitter.withAllGrammars ./treesitter.lua)
   (mkPlugin telescope-nvim ./telescope.lua)
   (mkPlugin telescope-fzf-native-nvim ./telescope-fzf.lua)
-  (mkPlugin undotree ./undotree.lua)
+  (mkPlugin telescope-undo-nvim ./telescope-undo.lua)
   (mkPlugin vim-fugitive ./fugitive.lua)
   (mkPlugin vim-repeat ./repeat.lua)
   (mkPlugin vim-rhubarb ./rhubarb.lua)
