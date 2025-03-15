@@ -19,6 +19,8 @@ with pkgs.vimPlugins;
   (mkPlugin telescope-fzf-native-nvim ./telescope-fzf.lua)
   (mkPlugin undotree ./undotree.lua)
   (mkPlugin vim-fugitive ./fugitive.lua)
+  (mkPlugin vim-repeat ./repeat.lua)
+  (mkPlugin vim-rhubarb ./rhubarb.lua)
   (mkPlugin vimtex ./vimtex.lua)
   (mkPlugin zig-vim ./zig.lua)
 ]
