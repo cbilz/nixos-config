@@ -39,6 +39,8 @@ vim.opt.updatetime = 50
 vim.opt.textwidth = 80
 vim.opt.linebreak = true
 
+vim.opt.diffopt = "internal,filler,closeoff,linematch:60,algorithm:histogram"
+
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'tex',
     callback = function()

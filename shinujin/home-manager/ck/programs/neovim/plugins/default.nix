@@ -10,6 +10,7 @@ with pkgs.vimPlugins;
 [
   (mkPlugin catppuccin-nvim ./catppuccin.lua)
   (mkPlugin comment-nvim ./comment.lua)
+  (mkPlugin gitsigns-nvim ./gitsigns.lua)
   (mkPlugin leap-nvim ./leap.lua)
   (mkPlugin lualine-nvim ./lualine.lua)
   (mkPlugin nvim-lspconfig ./lspconfig.lua)
