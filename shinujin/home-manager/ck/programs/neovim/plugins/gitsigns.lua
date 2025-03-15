@@ -68,8 +68,8 @@ require('gitsigns').setup {
       gitsigns.blame_line({ full = true })
     end)
 
-    map('n', '<leader>gq', gitsigns.setqflist)
-    map('n', '<leader>gQ', function() gitsigns.setqflist('all') end)
+    map('n', '<leader>gl', gitsigns.setqflist)
+    map('n', '<leader>gL', function() gitsigns.setqflist('all') end)
 
     -- Toggles
     map('n', '<leader>gd', gitsigns.toggle_deleted)
