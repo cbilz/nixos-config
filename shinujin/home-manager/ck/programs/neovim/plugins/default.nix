@@ -8,10 +8,10 @@ let
 in
 with pkgs.vimPlugins;
 [
+  (mkPlugin catppuccin-nvim ./catppuccin.lua)
   (mkPlugin comment-nvim ./comment.lua)
   (mkPlugin leap-nvim ./leap.lua)
   (mkPlugin lualine-nvim ./lualine.lua)
-  (mkPlugin melange-nvim ./melange.lua)
   (mkPlugin nvim-lspconfig ./lspconfig.lua)
   (mkPlugin nvim-treesitter.withAllGrammars ./treesitter.lua)
   (mkPlugin telescope-nvim ./telescope.lua)
