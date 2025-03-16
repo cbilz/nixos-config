@@ -32,7 +32,7 @@ require('gitsigns').setup {
     -- Navigation
     map('n', ']c', function()
       if vim.wo.diff then
-        vim.cmd.normal({']c', bang = true})
+        vim.cmd.normal({ ']c', bang = true })
       else
         gitsigns.nav_hunk('next', { greedy = false })
       end
@@ -40,42 +40,42 @@ require('gitsigns').setup {
 
     map('n', '[c', function()
       if vim.wo.diff then
-        vim.cmd.normal({'[c', bang = true})
+        vim.cmd.normal({ '[c', bang = true })
       else
         gitsigns.nav_hunk('prev', { greedy = false })
       end
     end)
 
     -- Actions
-    map('n', '<leader>gs', gitsigns.stage_hunk)
-    map('n', '<leader>gu', gitsigns.undo_stage_hunk)
-    map('n', '<leader>gr', gitsigns.reset_hunk)
-    map('n', '<leader>gp', gitsigns.preview_hunk_inline)
+    map('n', '<leader>hs', gitsigns.stage_hunk)
+    map('n', '<leader>hu', gitsigns.undo_stage_hunk)
+    map('n', '<leader>hr', gitsigns.reset_hunk)
+    map('n', '<leader>hp', gitsigns.preview_hunk_inline)
 
-    map('v', '<leader>gs', function()
+    map('v', '<leader>hs', function()
       gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
     end)
 
-    map('v', '<leader>gr', function()
+    map('v', '<leader>hr', function()
       gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
     end)
 
-    map('n', '<leader>gS', gitsigns.stage_buffer)
-    map('n', '<leader>gR', gitsigns.reset_buffer)
-    map('n', '<leader>gB', gitsigns.blame)
+    map('n', '<leader>hS', gitsigns.stage_buffer)
+    map('n', '<leader>hR', gitsigns.reset_buffer)
+    map('n', '<leader>hB', gitsigns.blame)
 
-    map('n', '<leader>gb', function()
+    map('n', '<leader>hb', function()
       gitsigns.blame_line({ full = true })
     end)
 
-    map('n', '<leader>gl', gitsigns.setqflist)
-    map('n', '<leader>gL', function() gitsigns.setqflist('all') end)
+    map('n', '<leader>hl', gitsigns.setqflist)
+    map('n', '<leader>hL', function() gitsigns.setqflist('all') end)
 
     -- Toggles
-    map('n', '<leader>gd', gitsigns.toggle_deleted)
-    map('n', '<leader>gw', gitsigns.toggle_word_diff)
+    map('n', '<leader>hd', gitsigns.toggle_deleted)
+    map('n', '<leader>hw', gitsigns.toggle_word_diff)
 
     -- Text object
-    map({'o', 'x'}, 'ih', gitsigns.select_hunk)
+    map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
   end
 }

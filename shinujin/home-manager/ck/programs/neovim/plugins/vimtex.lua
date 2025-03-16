@@ -1,7 +1,7 @@
 vim.g['vimtex_complete_close_braces'] = 1
 vim.g['vimtex_delim_toggle_mod_list'] = {
-  { '\\bigl', '\\bigr' },
-  { '\\Bigl', '\\Bigr' },
+  { '\\bigl',  '\\bigr' },
+  { '\\Bigl',  '\\Bigr' },
   { '\\biggl', '\\biggr' },
   { '\\Biggl', '\\Biggr' },
 }

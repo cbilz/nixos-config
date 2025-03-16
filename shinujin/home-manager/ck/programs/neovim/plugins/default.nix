@@ -16,11 +16,12 @@ with pkgs.vimPlugins;
   (mkPlugin nvim-lspconfig ./lspconfig.lua)
   (mkPlugin nvim-treesitter.withAllGrammars ./treesitter.lua)
   (mkPlugin telescope-nvim ./telescope.lua)
-  (mkPlugin telescope-fzf-native-nvim ./telescope-fzf.lua)
-  (mkPlugin telescope-undo-nvim ./telescope-undo.lua)
+  telescope-fzf-native-nvim
+  telescope-ui-select-nvim
+  telescope-undo-nvim
   (mkPlugin vim-fugitive ./fugitive.lua)
-  (mkPlugin vim-repeat ./repeat.lua)
-  (mkPlugin vim-rhubarb ./rhubarb.lua)
+  vim-repeat
+  vim-rhubarb
   (mkPlugin vimtex ./vimtex.lua)
   (mkPlugin zig-vim ./zig.lua)
 ]

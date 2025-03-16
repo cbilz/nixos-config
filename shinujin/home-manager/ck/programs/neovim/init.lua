@@ -1,23 +1,15 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader><space>", vim.cmd.noh)
-vim.keymap.set('n', '<leader>cd', "<cmd>cd %:h<cr><cmd>pwd<cr>")
-
-vim.opt.mouse = ""
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 
 vim.opt.list = true
-vim.opt.lcs="tab:  ,trail:~"
-vim.opt.showbreak=".."
-vim.opt.fillchars="fold: "
+vim.opt.lcs = "tab:  ,trail:~"
+vim.opt.showbreak = ".."
+vim.opt.fillchars = "fold: "
 
-vim.opt.foldlevel=99
+vim.opt.foldlevel = 99
 
-vim.opt.ignorecase=true
+vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.shiftwidth = 4
@@ -34,33 +26,36 @@ vim.opt.undofile = true
 vim.opt.scrolloff = 5
 vim.opt.signcolumn = "yes"
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 500
 
 vim.opt.textwidth = 80
 vim.opt.linebreak = true
 
 vim.opt.diffopt = "internal,filler,closeoff,linematch:60,algorithm:histogram"
 
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = 'tex',
-    callback = function()
-        vim.opt.indentexpr = ''
-        vim.opt.textwidth = 0
-    end,
-})
+vim.opt.mouse = ""
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "zig", callback = function()
-        vim.opt_local.textwidth=100
-        vim.opt.colorcolumn = "101"
-        vim.keymap.set("n", "<leader>zf", function()
-	    job = vim.fn.jobstart({"zig", "fmt", vim.fn.expand('%')}, {
-                stdout_buffered = true,
-            })
-            if job >= 1 then
-                vim.fn.jobwait({job}, 30000)
-                vim.cmd.edit()
-            end
-        end)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader><space>", function()
+  vim.cmd.noh()
+  vim.g.ck_lsp_auto_highlight = false
+  vim.lsp.buf.clear_references()
+end)
+vim.keymap.set('n', '<leader>cd', "<cmd>cd %:h<cr><cmd>pwd<cr>")
+
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(opts)
+    local filetype = vim.bo[opts.buf].filetype
+    if filetype == 'tex' then
+      vim.opt.indentexpr = ''
+      vim.opt.textwidth = 0
+    elseif filetype == 'zig' then
+      vim.opt_local.textwidth = 100
+      vim.opt.colorcolumn = "101"
+    elseif filetype == 'lua' then
+      vim.opt_local.shiftwidth = 2
     end
+  end,
 })
