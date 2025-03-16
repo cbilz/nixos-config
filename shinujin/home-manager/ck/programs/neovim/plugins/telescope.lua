@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
   end
 })
 
-vim.api.nvim_create_autocmd({ 'CursorMoved', 'ModeChanged' }, {
+vim.api.nvim_create_autocmd({ 'CursorMoved', 'ModeChanged', 'WinLeave' }, {
   callback = function(_)
     vim.g.ck_lsp_auto_highlight = true
     vim.lsp.buf.clear_references()
