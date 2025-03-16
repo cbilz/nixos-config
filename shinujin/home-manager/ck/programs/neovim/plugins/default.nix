@@ -19,7 +19,7 @@ with pkgs.vimPlugins;
   telescope-fzf-native-nvim
   telescope-ui-select-nvim
   telescope-undo-nvim
-  (mkPlugin vim-fugitive ./fugitive.lua)
+  vim-fugitive
   vim-repeat
   vim-rhubarb
   (mkPlugin vimtex ./vimtex.lua)

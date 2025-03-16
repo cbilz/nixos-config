@@ -37,13 +37,20 @@ vim.opt.mouse = ""
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader><space>", function()
+
+local function map(mode, l, r, opts)
+  opts = opts or {}
+  opts.unique = true
+  vim.keymap.set(mode, l, r, opts)
+end
+
+map("n", "<leader>v", vim.cmd.Ex)
+map("n", "<leader><space>", function()
   vim.cmd.noh()
   vim.g.ck_lsp_auto_highlight = false
   vim.lsp.buf.clear_references()
 end)
-vim.keymap.set('n', '<leader>cd', "<cmd>cd %:h<cr><cmd>pwd<cr>")
+map('n', '<leader>cd', "<cmd>cd %:h<cr><cmd>pwd<cr>")
 
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(opts)

@@ -1,7 +1,13 @@
-vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "ö", vim.lsp.buf.hover)
-vim.keymap.set("n", "<leader>n", vim.lsp.buf.rename)
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.code_action)
+local function map(mode, l, r, opts)
+  opts = opts or {}
+  opts.unique = true
+  vim.keymap.set(mode, l, r, opts)
+end
+
+map("n", "gd", vim.lsp.buf.definition)
+map("n", "ö", vim.lsp.buf.hover)
+map("n", "<leader>n", vim.lsp.buf.rename)
+map("n", "<leader>z", vim.lsp.buf.code_action)
 
 vim.g.ck_format_on_write = 1
 
